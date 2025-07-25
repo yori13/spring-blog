@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ブログ一覧</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+        .blog {
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>ブログ一覧</h1>
+    <div th:each="blog : ${blogs}" class="blog">
+        <h2 th:text="${blog.title}">タイトル</h2>
+        <p th:text="${blog.content}">本文</p>
+    </div>
+</body>
+</html>

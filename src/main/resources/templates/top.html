@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ブログ一覧</title>
+</head>
+<body>
+  <ul>
+    <li><a th:href="@{/addBlog}">新規ブログ</a></li>
+    <li>編集</li>
+  </ul>
+  <h1>ブログ一覧</h1>
+  <div th:each="blog : ${blogs}" class="blog">
+    <a th:href="@{/blogs/{id}(id=${blog.id})}">
+      <h1 th:text="${blog.title}"></h1>
+    </a>
+  </div>
+</body>
+</html>

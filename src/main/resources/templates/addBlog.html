@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title>ブログ作成</title>
+  </head>
+  <body>
+    <div>
+      <form th:action="@{/addBlog}" method="post">
+        <input type="hidden" name="userId" th:value="1" >
+        <input type="text" name="title" id="title" placeholder="タイトル">
+        <textarea name="content" id="content" cols="30" rows="10" placeholder="本文を入力してください"></textarea>
+        <div>
+          <button type="submit">投稿する</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
